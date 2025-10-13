@@ -1,6 +1,16 @@
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import SeoHelmet from "../../components/SeoHelmet";
+import "../../google-ads.css"; // Import the specific CSS for Google Ads page
+import { Hero } from "../../components/3. Google Ads/Hero";
+import { BenefitsSection } from "../../components/3. Google Ads/BenefitsSection";
+import { BenefitsGrid } from "../../components/3. Google Ads/BenefitsGrid";
+import { AdvantagesSection } from "../../components/3. Google Ads/AdvantagesSection";
+import { StrategySection } from "../../components/3. Google Ads/StrategySection";
+import { AdFormatsSection } from "../../components/3. Google Ads/AdFormatsSection";
+import { CTASection } from "../../components/3. Google Ads/CTASection";
+import { PricingCards } from "../../components/3. Google Ads/PricingCards";
+import { PartnerBadges } from "../../components/3. Google Ads/PartnerBadges";
 
 export default function GoogleAds() {
   return (
@@ -11,40 +21,18 @@ export default function GoogleAds() {
         url="https://necimatech.com/quang-cao/google-ads"
         image="https://necimatech.com/og-google-ads.jpg"
       />
-      <div className="min-h-screen">
+      <div className="min-h-screen flex flex-col"> {/* Added flex flex-col */}
         <Header />
-        <main className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold text-center mb-8">Google Ads</h1>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 mb-6">
-              Dịch vụ chạy quảng cáo Google Ads chuyên nghiệp giúp doanh nghiệp xuất hiện trên trang đầu kết quả tìm kiếm,
-              tiếp cận khách hàng đang có nhu cầu thực tế.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Loại hình quảng cáo</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Google Search Ads</li>
-                  <li>• Google Display Network</li>
-                  <li>• Google Shopping Ads</li>
-                  <li>• YouTube Advertising</li>
-                </ul>
-              </div>
-
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Ưu điểm nổi bật</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Targeting chính xác theo từ khóa</li>
-                  <li>• Thanh toán theo click thực tế</li>
-                  <li>• Đo lường và tối ưu hóa dễ dàng</li>
-                  <li>• Phù hợp mọi quy mô doanh nghiệp</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </main>
-        <Footer />
+      <Hero />
+      <PartnerBadges />
+      <BenefitsSection />
+      <PricingCards />
+      <BenefitsGrid />
+      <AdvantagesSection />
+      <StrategySection />
+      <AdFormatsSection />
+      <CTASection />
+      <Footer />
       </div>
     </>
   );
