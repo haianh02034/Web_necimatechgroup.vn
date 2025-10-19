@@ -98,11 +98,7 @@ export function CTA() {
               </div>
 
               <div className="mt-8 p-6 bg-white/10 rounded-xl">
-                <p className="text-sm text-white/90">
-                  <span className="text-white">Lưu ý: </span>
-                  Figma Make không được thiết kế để thu thập thông tin cá nhân (PII) 
-                  hoặc bảo mật dữ liệu nhạy cảm. Đây chỉ là demo giao diện.
-                </p>
+              
               </div>
             </Card>
           </motion.div>

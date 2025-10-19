@@ -1,6 +1,14 @@
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import SeoHelmet from "../../components/SeoHelmet";
+import { WhatIsSEO } from "../../components/17. Dịch vụ SEO/WhatIsSEO";
+import { SEOTypes } from "../../components/17. Dịch vụ SEO/SEOTypes";
+import { Challenges } from "../../components/17. Dịch vụ SEO/Challenges";
+import { Pricing } from "../../components/17. Dịch vụ SEO/Pricing";
+import { Process } from "../../components/17. Dịch vụ SEO/Process";
+import { Testimonials } from "../../components/17. Dịch vụ SEO/Testimonials";
+import { CTA } from "../../components/17. Dịch vụ SEO/CTA";
+import { Hero } from "../../components/17. Dịch vụ SEO/Hero";
 
 export default function SEO() {
   return (
@@ -13,37 +21,14 @@ export default function SEO() {
       />
       <div className="min-h-screen">
         <Header />
-        <main className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold text-center mb-8">SEO</h1>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 mb-6">
-              Dịch vụ SEO chuyên nghiệp giúp website đạt thứ hạng cao trên các công cụ tìm kiếm,
-              tăng lưu lượng truy cập tự nhiên và cải thiện tỷ lệ chuyển đổi.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Các loại SEO</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• SEO On-page</li>
-                  <li>• SEO Off-page</li>
-                  <li>• Technical SEO</li>
-                  <li>• Local SEO</li>
-                </ul>
-              </div>
-
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Công cụ sử dụng</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Google Analytics & Search Console</li>
-                  <li>• SEMrush & Ahrefs</li>
-                  <li>• Google PageSpeed Insights</li>
-                  <li>• Schema Markup</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </main>
+        <Hero />
+              <WhatIsSEO />
+      <SEOTypes />
+      <Challenges />
+      <Pricing />
+      <Process />
+      <Testimonials />
+      <CTA />
         <Footer />
       </div>
     </>

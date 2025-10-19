@@ -1,191 +1,162 @@
-import { motion } from "motion/react";
-import { useInView } from "motion/react";
-import { useRef, useState } from "react";
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "../ui/button";
+import { TrendingUp, Users, GraduationCap } from "lucide-react";
 
-export default function Testimonials() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const testimonials = [
+export function CaseStudies() {
+  const caseStudies = [
     {
-      company: "Startup Mỹ Phẩm",
+      icon: TrendingUp,
       industry: "Mỹ phẩm",
-      result: "Tăng trưởng doanh thu gấp 3 lần",
-      duration: "6 tháng",
-      quote: "Sau 6 tháng sử dụng gói Pro của Necimatech, doanh thu của chúng tôi đã tăng gấp 3 lần. Đội ngũ rất chuyên nghiệp và hiểu rõ insight khách hàng.",
-      name: "Nguyễn Thị Mai",
-      position: "CEO",
-      rating: 5,
-      gradient: "from-pink-500 to-rose-500",
+      title: "Startup tăng trưởng gấp 3 lần",
+      description: "Một startup trong lĩnh vực mỹ phẩm đã tăng trưởng doanh thu gấp 3 lần chỉ sau 6 tháng sử dụng gói Pro.",
+      results: [
+        { label: "Tăng trưởng doanh thu", value: "+300%" },
+        { label: "Thời gian", value: "6 tháng" },
+        { label: "Gói sử dụng", value: "Pro" }
+      ],
+      color: "from-green-500 to-emerald-500",
+      bgColor: "bg-green-50"
     },
     {
-      company: "Thương hiệu F&B",
+      icon: Users,
       industry: "F&B",
-      result: "Tăng 40% khách quay lại",
-      duration: "8 tháng",
-      quote: "Necimatech đã giúp chúng tôi xây dựng được cộng đồng Facebook Group hơn 20.000 thành viên. Tỷ lệ khách hàng quay lại tăng 40%, điều này vượt xa mong đợi.",
-      name: "Trần Văn Hùng",
-      position: "Giám đốc Marketing",
-      rating: 5,
-      gradient: "from-orange-500 to-amber-500",
+      title: "Xây dựng cộng đồng 20.000 thành viên",
+      description: "Một thương hiệu truyền thống trong ngành F&B xây dựng được cộng đồng Group Facebook hơn 20.000 thành viên, giúp tăng 40% lượng khách quay lại.",
+      results: [
+        { label: "Cộng đồng Facebook", value: "20.000+" },
+        { label: "Khách hàng quay lại", value: "+40%" },
+        { label: "Engagement rate", value: "15%" }
+      ],
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50"
     },
     {
-      company: "SME Giáo Dục",
+      icon: GraduationCap,
       industry: "Giáo dục",
-      result: "Tăng 55% chuyển đổi học viên",
-      duration: "4 tháng",
-      quote: "Gói Premium với chiến lược Content + Video Ads kết hợp đã giúp chúng tôi tăng tỷ lệ chuyển đổi học viên đăng ký khóa học thêm 55%. Đầu tư xứng đáng!",
-      name: "Lê Thị Hương",
-      position: "Founder",
-      rating: 5,
-      gradient: "from-blue-500 to-indigo-500",
-    },
+      title: "Tăng 55% tỷ lệ chuyển đổi học viên",
+      description: "Một SME trong lĩnh vực giáo dục tăng tỷ lệ chuyển đổi học viên đăng ký khóa học thêm 55% nhờ gói Premium với chiến lược Content + Video Ads kết hợp.",
+      results: [
+        { label: "Tỷ lệ chuyển đổi", value: "+55%" },
+        { label: "Gói sử dụng", value: "Premium" },
+        { label: "Chi phí/Lead", value: "-30%" }
+      ],
+      color: "from-purple-500 to-indigo-500",
+      bgColor: "bg-purple-50"
+    }
   ];
 
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-white via-blue-50 to-white">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl mb-6 text-gray-900">
-            Case Study thành công từ khách hàng
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            Case Study thành công 
+            <span className="text-blue-600 block">từ khách hàng</span>
           </h2>
-          <p className="text-xl text-gray-600">
-            Những kết quả thực tế từ các doanh nghiệp đã tin tưởng và hợp tác với chúng tôi
+          
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Những câu chuyện thành công thực tế từ các doanh nghiệp đã tin tưởng và đồng hành cùng Necimatech Group
           </p>
-        </motion.div>
+        </div>
 
-        <div className="max-w-5xl mx-auto relative">
-          {/* Navigation buttons */}
-          <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-16 z-20">
-            <Button
-              onClick={prevTestimonial}
-              variant="outline"
-              size="icon"
-              className="w-12 h-12 rounded-full bg-white shadow-lg hover:bg-gray-50"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </Button>
-          </div>
-          <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-16 z-20">
-            <Button
-              onClick={nextTestimonial}
-              variant="outline"
-              size="icon"
-              className="w-12 h-12 rounded-full bg-white shadow-lg hover:bg-gray-50"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </Button>
-          </div>
-
-          {/* Testimonials carousel */}
-          <div className="relative overflow-hidden">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={false}
-                animate={{
-                  opacity: index === activeIndex ? 1 : 0,
-                  x: index === activeIndex ? 0 : index < activeIndex ? -100 : 100,
-                  scale: index === activeIndex ? 1 : 0.8,
-                }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={`${index === activeIndex ? "relative" : "absolute inset-0 pointer-events-none"}`}
-              >
-                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-                  <div className={`bg-gradient-to-r ${testimonial.gradient} p-8 md:p-12`}>
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={index === activeIndex && isInView ? { scale: 1 } : { scale: 0 }}
-                      transition={{ duration: 0.6, delay: 0.3 }}
-                      className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6"
-                    >
-                      <Quote className="w-8 h-8 text-white" />
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={index === activeIndex && isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                      className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6"
-                    >
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-white/80 text-sm mb-1">Ngành</div>
-                        <div className="text-white">{testimonial.industry}</div>
-                      </div>
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-white/80 text-sm mb-1">Kết quả</div>
-                        <div className="text-white">{testimonial.result}</div>
-                      </div>
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 col-span-2 md:col-span-1">
-                        <div className="text-white/80 text-sm mb-1">Thời gian</div>
-                        <div className="text-white">{testimonial.duration}</div>
-                      </div>
-                    </motion.div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {caseStudies.map((study, index) => (
+            <div key={index} className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+              {/* Background pattern */}
+              <div className={`absolute inset-0 ${study.bgColor} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}></div>
+              
+              <div className="relative p-8">
+                {/* Header */}
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${study.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <study.icon className="w-8 h-8 text-white" />
                   </div>
-
-                  <div className="p-8 md:p-12">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={index === activeIndex && isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                    >
-                      <p className="text-xl text-gray-700 mb-6 italic leading-relaxed">
-                        "{testimonial.quote}"
-                      </p>
-
-                      <div className="flex items-center gap-2 mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={index === activeIndex && isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                            transition={{ duration: 0.3, delay: 0.6 + i * 0.1 }}
-                          >
-                            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      <div className="border-t pt-6">
-                        <div className="text-gray-900">{testimonial.name}</div>
-                        <div className="text-gray-600">
-                          {testimonial.position} - {testimonial.company}
-                        </div>
-                      </div>
-                    </motion.div>
+                  <div>
+                    <div className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                      {study.industry}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                      {study.title}
+                    </h3>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
 
-          {/* Dots indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`transition-all duration-300 rounded-full ${
-                  index === activeIndex ? "w-8 h-3 bg-blue-600" : "w-3 h-3 bg-gray-300 hover:bg-gray-400"
-                }`}
-              />
-            ))}
+                {/* Description */}
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  {study.description}
+                </p>
+
+                {/* Results */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-gray-900 mb-3">Kết quả đạt được:</h4>
+                  {study.results.map((result, resultIndex) => (
+                    <div key={resultIndex} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg group-hover:bg-white transition-colors">
+                      <span className="text-sm font-medium text-gray-700">{result.label}</span>
+                      <span className={`font-bold bg-gradient-to-r ${study.color} bg-clip-text text-transparent`}>
+                        {result.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Quote indicator */}
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <span className="mr-2">💬</span>
+                    <span className="italic">"Kết quả vượt ngoài mong đợi!"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Summary stats */}
+        <div className="mt-16">
+          <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Tổng quan thành tích
+              </h3>
+              <p className="text-gray-600">
+                Những con số ấn tượng từ các dự án đã triển khai
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-3xl font-bold text-green-600 mb-2">500+</div>
+                <div className="text-gray-600">Dự án thành công</div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
+                <div className="text-gray-600">Khách hàng hài lòng</div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-3xl font-bold text-purple-600 mb-2">250%</div>
+                <div className="text-gray-600">ROI trung bình</div>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-3xl font-bold text-orange-600 mb-2">15+</div>
+                <div className="text-gray-600">Ngành nghề</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-16 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Bạn muốn trở thành case study tiếp theo?
+            </h3>
+            <p className="text-lg text-gray-600 mb-6">
+              Hãy liên hệ với chúng tôi để được tư vấn miễn phí và xây dựng chiến lược phù hợp 
+              với doanh nghiệp của bạn.
+            </p>
+            <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
+              <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full">✅ Tư vấn miễn phí</span>
+              <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">📊 Phân tích chi tiết</span>
+              <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full">🎯 Chiến lược cá nhân hóa</span>
+            </div>
           </div>
         </div>
       </div>

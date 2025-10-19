@@ -5,7 +5,7 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white  "style={{ minHeight: 'calc(100vh - 4rem)' }}>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
       
       <div className="container mx-auto px-4 py-20 lg:py-28 relative">
@@ -24,7 +24,7 @@ export function Hero() {
               <span className="text-sm">✨ Google Partner & Meta Business Partner</span>
             </motion.div>
             
-            <h1 className="text-6xl lg:text-5xl xl:text-6xl mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-5xl xl:text-6xl mb-6 leading-tight">
               Dịch vụ Quảng cáo Google Ads
             </h1>
             

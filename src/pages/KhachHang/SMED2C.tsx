@@ -1,6 +1,14 @@
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import SeoHelmet from "../../components/SeoHelmet";
+import { Hero } from "../../components/15. nhóm khách hàng SMED2C/Hero";
+import { Challenges } from "../../components/15. nhóm khách hàng SMED2C/Challenges";
+import { Solutions } from "../../components/15. nhóm khách hàng SMED2C/Solutions";
+import { ServicePackages } from "../../components/15. nhóm khách hàng SMED2C/ServicePackages";
+import { Benefits } from "../../components/15. nhóm khách hàng SMED2C/Benefits";
+import { Testimonials } from "../../components/15. nhóm khách hàng SMED2C/Testimonials";
+import { CTA } from "../../components/15. nhóm khách hàng SMED2C/CTA";
+import { Toaster } from "../../components/ui/sonner";
 
 export default function SMED2C() {
   return (
@@ -13,37 +21,14 @@ export default function SMED2C() {
       />
       <div className="min-h-screen">
         <Header />
-        <main className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold text-center mb-8">SMED2C</h1>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 mb-6">
-              Giải pháp toàn diện dành cho doanh nghiệp SMED2C (Small and Medium Enterprises Direct to Consumer).
-              Chúng tôi đồng hành cùng doanh nghiệp vừa và nhỏ trong hành trình chuyển đổi số và tiếp cận khách hàng trực tiếp.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Đối tượng phục vụ</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Doanh nghiệp vừa và nhỏ</li>
-                  <li>• Startup và doanh nghiệp mới</li>
-                  <li>• Doanh nghiệp bán lẻ</li>
-                  <li>• Doanh nghiệp dịch vụ</li>
-                </ul>
-              </div>
-
-              <div className="bg-green-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Giải pháp cung cấp</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Website và ứng dụng bán hàng</li>
-                  <li>• Marketing và quảng cáo online</li>
-                  <li>• Hệ thống quản lý khách hàng</li>
-                  <li>• Tư vấn chiến lược kinh doanh</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </main>
+              <Hero />
+      <Challenges />
+      <Solutions />
+      <ServicePackages />
+      <Benefits />
+      <Testimonials />
+      <CTA />
+      <Toaster />
         <Footer />
       </div>
     </>

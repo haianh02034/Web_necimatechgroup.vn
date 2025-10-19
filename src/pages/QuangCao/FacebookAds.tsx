@@ -1,39 +1,121 @@
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import SeoHelmet from "../../components/SeoHelmet";
-import Hero from "../../components/2. Facebook Ads/Hero";
-import Introduction from "../../components/2. Facebook Ads/Introduction";
-import Challenges from "../../components/2. Facebook Ads/Challenges";
-import ServiceOverview from "../../components/2. Facebook Ads/ServiceOverview";
+import { Hero } from "../../components/2. Facebook Ads/Hero";
+import { motion } from "motion/react";
+
+import {ServicesOverview} from "../../components/2. Facebook Ads/ServicesOverview";
 import PricingPackages from "../../components/2. Facebook Ads/PricingPackages";
-import Differentiators from "../../components/2. Facebook Ads/Differentiators";
-import Benefits from "../../components/2. Facebook Ads/Benefits";
-import Testimonials from "../../components/2. Facebook Ads/Testimonials";
-import CTA from "../../components/2. Facebook Ads/CTA";
+import {WhyChooseUs}  from "../../components/2. Facebook Ads/Differentiators";
+import {BenefitsSection} from "../../components/2. Facebook Ads/Benefits";
+import {CaseStudies} from "../../components/2. Facebook Ads/Testimonials";
+
+// import {CTA} from "../../components/2. Facebook Ads/CTA";
+import { AboutFacebookAds } from "../../components/2. Facebook Ads/Introduction";
+import { ChallengesSection } from "../../components/2. Facebook Ads/ChallengesSection";
+import {ContactSection} from "../../components/2. Facebook Ads/ContactSection";
 import "../../facebook-ads.css"; // Import the specific CSS for Google Ads page
 
 export default function FacebookAds() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      className="min-h-screen"
+    >
       <SeoHelmet
         title="Facebook Ads - Dịch vụ quảng cáo Facebook chuyên nghiệp - Necimatech Group"
         description="Dịch vụ chạy quảng cáo Facebook Ads chuyên nghiệp. Tối ưu hóa chiến dịch, tăng tỷ lệ chuyển đổi và tiếp cận khách hàng mục tiêu hiệu quả với đội ngũ chuyên gia giàu kinh nghiệm."
         url="https://necimatech.com/quang-cao/facebook-ads"
         image="https://necimatech.com/og-facebook-ads.jpg"
       />
-      {/* <div className="min-h-screen"> */}
-        <Header />
-      <Hero />
-      <Introduction />
-      <Challenges />
-      <ServiceOverview />
-      <PricingPackages />
-      <Differentiators />
-      <Benefits />
-      <Testimonials />
-      <CTA />
+      <Header />
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        <Hero />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <AboutFacebookAds />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <ChallengesSection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <ServicesOverview />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <PricingPackages />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <WhyChooseUs />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <BenefitsSection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <CaseStudies />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        <ContactSection />
+      </motion.div>
+
       <Footer />
-      {/* </div> */}
-    </>
+    </motion.div>
   );
 }

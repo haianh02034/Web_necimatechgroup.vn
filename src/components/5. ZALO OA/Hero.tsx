@@ -6,12 +6,12 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 export function Hero() {
   return (
     <section 
-      className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white"
+      className="relative pt-16 pb-24 px-4 overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white"
       aria-label="Hero Section - Giới thiệu dịch vụ Zalo OA"
     >
       {/* Optimized Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Main gradient orbs - optimized with will-change */}
+        {/* Main gradient orbs - optimized with will-change */} 
         <motion.div
           animate={{
             y: [0, -30, 0],
@@ -201,7 +201,7 @@ export function Hero() {
                 {/* Screen */}
                 <div className="bg-white rounded-[2rem] overflow-hidden relative">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1694878981866-b1cb8303d53e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwemFsbyUyMHNvY2lhbCUyMG1lZGlhfGVufDF8fHx8MTc1OTk5NjUwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src="/images/zalo.png"
                     alt="Zalo OA Interface"
                     className="w-full h-[500px] object-cover"
                   />

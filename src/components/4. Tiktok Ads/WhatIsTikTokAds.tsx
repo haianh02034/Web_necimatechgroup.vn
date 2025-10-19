@@ -39,20 +39,38 @@ export function WhatIsTikTokAds() {
   return (
     <section ref={ref} className="py-20 bg-gradient-to-b from-white to-purple-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl mb-4">
-            TikTok Ads là gì? Vì sao doanh nghiệp nên đầu tư?
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            TikTok Ads là hệ thống quảng cáo của TikTok, cho phép thương hiệu hiển thị 
-            nội dung đến người dùng mục tiêu thông qua các định dạng sáng tạo
-          </p>
-        </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.6 }}
+  className="mb-16"
+>
+  <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-12">
+    {/* Ảnh nền */}
+    <img 
+      src="https://images.unsplash.com/photo-1756970009567-68e6ce773a73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+      alt="TikTok Marketing" 
+      className="w-full h-96 object-cover"
+    />
+
+    {/* Lớp phủ nhẹ toàn ảnh để chữ không bị lẫn */}
+    <div className="absolute inset-0 bg-black/30" />
+
+    {/* Hộp chữ */}
+    <div className="absolute bottom-0 left-0 right-0 p-8">
+      <div className="backdrop-blur-sm bg-black/40 rounded-2xl p-6 text-white shadow-lg">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-2">
+          TikTok Ads là gì? Vì sao doanh nghiệp nên đầu tư?
+        </h2>
+        <p className="text-white/90 max-w-3xl leading-relaxed">
+          TikTok Ads là hệ thống quảng cáo của TikTok, cho phép thương hiệu hiển thị 
+          nội dung đến người dùng mục tiêu thông qua các định dạng sáng tạo.
+        </p>
+      </div>
+    </div>
+  </div>
+</motion.div>
+
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {adTypes.map((type, index) => (

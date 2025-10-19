@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Sun, Moon, ChevronDown, Facebook, Search, Laptop, ShoppingCart, Rocket, Newspaper, User, Film, FileText, Factory } from 'lucide-react';
 import { Button } from './ui/button';
+import { CustomerContactSection } from './CustomerContactSection';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,6 +19,7 @@ export function Header() {
   const [mobileDropdown, setMobileDropdown] = useState<number | null>(null);
   const [isThemeToggling, setIsThemeToggling] = useState(false);
   const [rippleEffect, setRippleEffect] = useState<{ x: number; y: number; show: boolean } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const menuRefs = useRef<HTMLButtonElement[]>([]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -353,6 +355,43 @@ export function Header() {
           .group\/item:hover .group-hover\/item\:animate-pulse-glow {
             animation: pulse-glow 1.5s ease-in-out infinite;
           }
+
+          @keyframes modalFadeIn {
+            from {
+              opacity: 0;
+              transform: scale(0.9) translateY(-20px);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1) translateY(0);
+            }
+          }
+
+          @keyframes modalContentReveal {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes modalFadeOut {
+            from {
+              opacity: 1;
+              transform: scale(1) translateY(0);
+            }
+            to {
+              opacity: 0;
+              transform: scale(0.9) translateY(-20px);
+            }
+          }
+
+          .animate-modalFadeIn {
+            animation: modalFadeIn 0.3s ease-out;
+          }
         `}
       </style>
 
@@ -361,9 +400,12 @@ export function Header() {
           <div className="flex justify-between items-center h-16">
             {/* Enhanced Logo */}
             <div className="flex-shrink-0">
-              <h1 className={`text-2xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-clip-text text-transparent cursor-pointer logo-hover transition-all duration-300 hover:scale-105 bg-[length:200%_100%] bg-[position:10%_0]`}>                
-                Necimatech Group
-              </h1>
+               <Link
+    to="/"
+    className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-clip-text text-transparent cursor-pointer logo-hover transition-all duration-300 hover:scale-105 bg-[length:200%_100%] bg-[position:10%_0]"
+  >
+    Necimatech Group
+  </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -425,19 +467,14 @@ export function Header() {
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-4">
               {/* Enhanced Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className={`p-3 rounded-lg relative overflow-hidden transition-all duration-300 hover-lift ${isDarkMode ? 'bg-purple-800/50 text-yellow-400 hover:bg-purple-700/60' : 'bg-purple-100/80 text-purple-600 hover:bg-purple-200/90'} ${isThemeToggling ? 'theme-toggle-active' : ''}`}
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
 
               {/* Enhanced CTA Button with Sliding Light Effect */}
           <Button
-  className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-[length:200%_100%] bg-[position:10%_0] hover:shadow-xl hover:scale-105 transition-all duration-300 text-white relative overflow-hidden slide-light-effect py-2 px-6 font-semibold"
->
-  Tư vấn miễn phí
-</Button>
+            onClick={() => setIsModalOpen(true)}
+            className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-[length:200%_100%] bg-[position:10%_0] hover:shadow-xl hover:scale-105 transition-all duration-300 text-white relative overflow-hidden slide-light-effect py-2 px-6 font-semibold"
+          >
+            Tư vấn miễn phí
+          </Button>
 
             </div>
 
@@ -498,7 +535,10 @@ export function Header() {
                 ))}
 
                 <div className={`pt-3 mt-2 border-t ${isDarkMode ? 'border-border' : 'border-border'}`}>
-                  <Button className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-base font-semibold rounded-xl relative overflow-hidden slide-light-effect">
+                  <Button
+                    onClick={() => { setIsModalOpen(true); setIsMenuOpen(false); }}
+                    className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-base font-semibold rounded-xl relative overflow-hidden slide-light-effect"
+                  >
                     🚀 Tư vấn miễn phí
                   </Button>
                 </div>
@@ -507,6 +547,52 @@ export function Header() {
           )}
         </div>
       </header>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <>
+          {/* Backdrop - Click to close */}
+          <div
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+            style={{ zIndex: 100 }}
+            onClick={() => setIsModalOpen(false)}
+          />
+
+          {/* Modal Box - Prevent backdrop clicks */}
+          <div
+            className="fixed inset-0 flex items-center justify-center"
+            style={{ zIndex: 101 }}
+            onClick={(e) => {
+              // Only close if clicked directly on this container (not bubbled from modal)
+              if (e.target === e.currentTarget) {
+                setIsModalOpen(false);
+              }
+            }}
+          >
+            <div
+              className="bg-white rounded-3xl shadow-2xl max-w-5xl w-full mx-4 max-h-[90vh] animate-modalFadeIn relative overflow-hidden transition-all duration-300 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] hover:scale-[1.02]"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-0 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 rounded-full p-3 transition-all duration-300 hover:scale-125 shadow-xl border-2 border-white/20 backdrop-blur-sm animate-pulse"
+                style={{ zIndex: 10 }}
+              >
+                <X className="w-6 h-6 text-white drop-shadow-sm" />
+              </button>
+
+              {/* Modal Content */}
+              <div
+                className="overflow-y-auto max-h-[85vh] p-8 animate-modalContentReveal"
+                style={{
+                  animation: 'modalContentReveal 0.5s ease-out 0.2s both'
+                }}
+              >
+                <CustomerContactSection />
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

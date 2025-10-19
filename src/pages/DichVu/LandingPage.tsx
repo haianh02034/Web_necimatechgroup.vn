@@ -1,6 +1,15 @@
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import SeoHelmet from "../../components/SeoHelmet";
+import { WhatIsLandingPage } from "../../components/13. Dịch vụ marketing Landing Page/WhatIsLandingPage";
+import { WhyNeedLandingPage } from "../../components/13. Dịch vụ marketing Landing Page/WhyNeedLandingPage";
+import { PricingPackages } from "../../components/13. Dịch vụ marketing Landing Page/PricingPackages";
+import { KeyFeatures } from "../../components/13. Dịch vụ marketing Landing Page/KeyFeatures";
+import { Benefits } from "../../components/13. Dịch vụ marketing Landing Page/Benefits";
+import { Testimonials } from "../../components/13. Dịch vụ marketing Landing Page/Testimonials";
+import { CTASection } from "../../components/13. Dịch vụ marketing Landing Page/CTASection";
+import { Hero } from "../../components/13. Dịch vụ marketing Landing Page/Hero";
+import { Toaster } from "../../components/ui/sonner";
 
 export default function LandingPage() {
   return (
@@ -13,37 +22,15 @@ export default function LandingPage() {
       />
       <div className="min-h-screen">
         <Header />
-        <main className="container mx-auto px-4 py-8">
-          <h1 className="text-4xl font-bold text-center mb-8">Landing Page</h1>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 mb-6">
-              Dịch vụ thiết kế Landing Page chuyên nghiệp với tỷ lệ chuyển đổi cao, tối ưu hóa trải nghiệm người dùng
-              và các yếu tố thúc đẩy hành vi mua hàng.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-indigo-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Tính năng Landing Page</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Thiết kế responsive</li>
-                  <li>• Tối ưu tốc độ tải trang</li>
-                  <li>• A/B testing</li>
-                  <li>• Tích hợp công cụ tracking</li>
-                </ul>
-              </div>
-
-              <div className="bg-cyan-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Mục đích sử dụng</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Bán sản phẩm/dịch vụ</li>
-                  <li>• Thu thập thông tin khách hàng</li>
-                  <li>• Quảng bá sự kiện</li>
-                  <li>• Tăng tỷ lệ đăng ký</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </main>
+        <Hero />
+              <WhatIsLandingPage />
+      <WhyNeedLandingPage />
+      <PricingPackages />
+      <KeyFeatures />
+      <Benefits />
+      <Testimonials />
+      <CTASection />
+      <Toaster />
         <Footer />
       </div>
     </>

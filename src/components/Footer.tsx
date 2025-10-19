@@ -8,35 +8,37 @@ import {
   Youtube,
   Instagram
 } from 'lucide-react';
+import { Link } from "react-router-dom";
+
 
 export function Footer() {
   const services = [
-    "Website",
-    "TikTok Marketing",
-    "SEO",
-    "Google Ads",
-    "Facebook Ads",
-    "Landing Page",
-    "Zalo OA",
-    "Content & Media"
+    { name: "Website", path: "/dich-vu/website" },
+    { name: "TikTok Marketing", path: "/quang-cao/tiktok-ads" },
+    { name: "SEO", path: "/dich-vu/seo" },
+    { name: "Google Ads", path: "/quang-cao/google-ads" },
+    { name: "Facebook Ads", path: "/quang-cao/facebook-ads" },
+    { name: "Landing Page", path: "/dich-vu/landing-page" },
+    { name: "Zalo OA", path: "/quang-cao/zalo-oa" },
+    { name: "Content & Media", path: "/dich-vu/content-media" }
   ];
 
   const solutions = [
-    "Startup/SAAS",
-    "SME/D2C",
-    "Doanh nghiệp truyền thống",
-    "Chuyển đổi số",
-    "Tự động hóa",
-    "AI Solutions"
+    { name: "Startup / SAAS", path: "/khach-hang/startup" },
+    { name: "SME / D2C", path: "/khach-hang/smed2c" },
+    { name: "Doanh nghiệp truyền thống", path: "/dich-vu/dn-truyen-thong" },
+    { name: "Chuyển đổi số", path: "/dich-vu/dn-truyen-thong" },
+    { name: "Tự động hóa", path: "/dich-vu/seo" },
+    { name: "AI Solutions", path: "/dich-vu/content-media" }
   ];
 
   const quickLinks = [
-    "Giới thiệu",
-    "Dịch vụ",
-    "Thành tựu",
-    "Đánh giá",
-    "Liên hệ",
-    "Blog"
+    { name: "Giới thiệu", path: "/gioi-thieu" },
+    { name: "Dịch vụ", path: "/dich-vu/website" },
+    { name: "Thành tựu", path: "/thanh-tuu" },
+    { name: "Đánh giá", path: "/danh-gia" },
+    { name: "Liên hệ", path: "/lien-he" },
+    { name: "Blog", path: "/blog" }
   ];
 
   return (
@@ -70,7 +72,7 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <div>
                   <div className="font-medium">Hotline</div>
-                  <div className="text-gray-300 text-sm">0123 456 789</div>
+                  <div className="text-gray-300 text-sm">1900 368 628</div>
                 </div>
               </div>
 
@@ -78,7 +80,7 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0" />
                 <div>
                   <div className="font-medium">Email</div>
-                  <div className="text-gray-300 text-sm">contact@necimatech.com</div>
+                  <div className="text-gray-300 text-sm">info@necimatechgroup.vn</div>
                 </div>
               </div>
 
@@ -99,11 +101,11 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Dịch vụ</h4>
             <ul className="space-y-2">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
-                    {service}
-                  </a>
+              {services.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.path} className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -113,11 +115,11 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Giải pháp</h4>
             <ul className="space-y-2">
-              {solutions.map((solution, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
-                    {solution}
-                  </a>
+              {solutions.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.path} className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -127,11 +129,11 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Liên kết nhanh</h4>
             <ul className="space-y-2 mb-6">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
-                    {link}
-                  </a>
+              {quickLinks.map((item, i) => (
+                <li key={i}>
+                  <Link to={item.path} className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -140,9 +142,14 @@ export function Footer() {
             <div>
               <h5 className="font-medium mb-3">Theo dõi chúng tôi</h5>
               <div className="flex space-x-3">
-                <a href="#" className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
+             <a
+                href="https://www.facebook.com/necimatechgroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
                 <a href="#" className="bg-gray-800 p-2 rounded-lg hover:bg-blue-600 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
