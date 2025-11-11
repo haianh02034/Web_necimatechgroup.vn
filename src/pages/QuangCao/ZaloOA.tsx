@@ -8,7 +8,7 @@ import { WhyChooseUs } from "../../components/5. ZALO OA/WhyChooseUs";
 import { Pricing } from "../../components/5. ZALO OA/Pricing";
 import { Process } from "../../components/5. ZALO OA/Process";
 import { Testimonials } from "../../components/5. ZALO OA/Testimonials";
-import { CTA } from "../../components/5. ZALO OA/CTA";
+
 import "../../zalo-oa.css"; // Import the specific CSS for Zalo OA page
 export default function ZaloOA() {
   return (
@@ -28,7 +28,7 @@ export default function ZaloOA() {
       <Pricing />
       <Process />
       <Testimonials />
-      <CTA />
+
       <Footer />
       </div>
     </>

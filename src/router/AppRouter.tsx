@@ -18,6 +18,7 @@ import SMED2C from "../pages/KhachHang/SMED2C";
 import Startup from "../pages/KhachHang/Startup";
 import { useDynamicCSS } from "../hooks/useDynamicCSS";
 import ScrollToTop from "../components/ScrollToTop";
+import { CustomerContactModalProvider } from "../components/CustomerContactModalProvider";
 
 function RouterContent() {
   // Sử dụng hook để load CSS động dựa trên route hiện tại
@@ -57,7 +58,9 @@ function RouterContent() {
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <RouterContent />
+      <CustomerContactModalProvider>
+        <RouterContent />
+      </CustomerContactModalProvider>
     </BrowserRouter>
   );
 }

@@ -6,7 +6,7 @@ import { Services } from "../../components/14. Dịch vụ doanh nghiệp truy�
 import { Benefits } from "../../components/14. Dịch vụ doanh nghiệp truyền thống/Benefits";
 import { Process } from "../../components/14. Dịch vụ doanh nghiệp truyền thống/Process";
 import { Testimonials } from "../../components/14. Dịch vụ doanh nghiệp truyền thống/Testimonials";
-import { CTA } from "../../components/14. Dịch vụ doanh nghiệp truyền thống/CTA";
+
 import { Hero } from "../../components/14. Dịch vụ doanh nghiệp truyền thống/Hero";
 export default function DNTruyenThong() {
   return (
@@ -25,7 +25,7 @@ export default function DNTruyenThong() {
       <Benefits />
       <Process />
       <Testimonials />
-      <CTA />
+
         <Footer />
       </div>
     </>

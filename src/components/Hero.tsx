@@ -3,8 +3,10 @@ import { Button } from "./ui/button";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "./ScrollAnimation";
 import { AnimatedIcon } from "./AnimatedIcon";
 import { Zap, Shield, Award } from 'lucide-react';
+import { useCustomerContactModal } from "./CustomerContactModalProvider";
 
 export function Hero() {
+  const { openModal } = useCustomerContactModal();
   return (
     <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32 overflow-hidden">
       {/* Background Animation */}
@@ -79,7 +81,7 @@ export function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button size="lg" className="px-8 py-4">
+                  <Button size="lg" className="px-8 py-4" onClick={openModal} >
                     Tư vấn miễn phí
                   </Button>
                 </motion.div>
@@ -87,8 +89,8 @@ export function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" size="lg" className="px-8 py-4">
-                    Xem dịch vụ
+                  <Button asChild variant="outline" size="lg" className="px-8 py-4">
+                    <a href="#services">Xem dịch vụ</a>
                   </Button>
                 </motion.div>
               </motion.div>

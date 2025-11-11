@@ -11,7 +11,7 @@ import { Differentiators } from "../../components/4. Tiktok Ads/Differentiators"
 import { Process } from "../../components/4. Tiktok Ads/Process";
 import { Testimonials } from "../../components/4. Tiktok Ads/Testimonials";
 import { FAQ } from "../../components/4. Tiktok Ads/FAQ";
-import { CTA } from "../../components/4. Tiktok Ads/CTA";
+
 import "../../tiktok-ads.css"; // Import the specific CSS for TikTok Ads page
 
 export default function TikTokAds() {
@@ -35,7 +35,7 @@ export default function TikTokAds() {
       <Process />
       <Testimonials />
       <FAQ />
-      <CTA />
+   
       <Footer />
       </div>
     </>

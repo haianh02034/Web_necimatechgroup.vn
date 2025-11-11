@@ -3,6 +3,9 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "./ScrollAnimation";
 import { AnimatedIcon } from "./AnimatedIcon";
+import { useCustomerContactModal } from "./CustomerContactModalProvider";
+import { Link } from "react-router-dom";
+
 import { 
   Globe, 
   Video, 
@@ -19,92 +22,107 @@ import {
 } from 'lucide-react';
 
 export function Services() {
-  const services = [
-    {
-      icon: Globe,
-      title: "Website",
-      description: "Thiết kế website chuyên nghiệp, chuẩn SEO, tối ưu trải nghiệm người dùng",
-      features: ["Responsive Design", "SEO Optimized", "CMS Integration"],
-      badge: "Phổ biến"
-    },
-    {
-      icon: Video,
-      title: "TikTok",
-      description: "Xây dựng kênh TikTok sáng tạo, bắt trend nhanh chóng, tiếp cận giới trẻ",
-      features: ["Content Strategy", "Trend Analysis", "Community Building"],
-      badge: "Trending"
-    },
-    {
-      icon: Search,
-      title: "SEO",
-      description: "Tối ưu công cụ tìm kiếm, đưa website lên top Google, gia tăng traffic",
-      features: ["Keyword Research", "On-page SEO", "Link Building"],
-      badge: "Hiệu quả"
-    },
-    {
-      icon: Rocket,
-      title: "Startup/SAAS",
-      description: "Giải pháp marketing tinh gọn, tiết kiệm chi phí cho startup và SAAS",
-      features: ["MVP Development", "Growth Hacking", "Analytics"],
-      badge: "Startup"
-    },
-    {
-      icon: Building2,
-      title: "SME/D2C",
-      description: "Tư vấn chiến lược marketing số cho doanh nghiệp vừa và nhỏ",
-      features: ["E-commerce", "CRM Integration", "Multi-channel"],
-      badge: "SME"
-    },
-    {
-      icon: Factory,
-      title: "Doanh nghiệp truyền thống",
-      description: "Hỗ trợ chuyển đổi số toàn diện, nâng cao hiệu quả vận hành",
-      features: ["Digital Transformation", "Process Automation", "Training"],
-      badge: "Enterprise"
-    },
-    {
-      icon: FileText,
-      title: "Landing Page",
-      description: "Thiết kế trang đích tối ưu chuyển đổi, gia tăng leads",
-      features: ["Conversion Optimization", "A/B Testing", "Analytics"],
-      badge: "Conversion"
-    },
-    {
-      icon: MessageCircle,
-      title: "Zalo OA",
-      description: "Xây dựng và quản lý Official Account Zalo hiệu quả",
-      features: ["Automation", "Customer Service", "Broadcasting"],
-      badge: "Local"
-    },
-    {
-      icon: MousePointer,
-      title: "Google Ads",
-      description: "Triển khai chiến dịch Google Ads tối ưu chi phí, đúng target",
-      features: ["Keyword Strategy", "Campaign Management", "ROI Optimization"],
-      badge: "Performance"
-    },
-    {
-      icon: Facebook,
-      title: "Facebook Ads",
-      description: "Tư vấn và chạy quảng cáo Facebook hiệu quả, tăng brand awareness",
-      features: ["Audience Targeting", "Creative Strategy", "Retargeting"],
-      badge: "Social"
-    },
-    {
-      icon: PenTool,
-      title: "Content & Media",
-      description: "Sản xuất nội dung sáng tạo, hình ảnh và video chuyên nghiệp",
-      features: ["Content Strategy", "Video Production", "Graphic Design"],
-      badge: "Creative"
-    },
-    {
-      icon: Star,
-      title: "Booking Báo chí & KOL",
-      description: "Kết nối thương hiệu với KOL, báo chí uy tín",
-      features: ["KOL Network", "PR Strategy", "Media Relations"],
-      badge: "Influence"
-    }
-  ];
+  const { openModal } = useCustomerContactModal();
+
+const services = [
+  {
+    icon: Globe,
+    title: "Website",
+    description: "Thiết kế website chuyên nghiệp, chuẩn SEO, tối ưu trải nghiệm người dùng",
+    features: ["Responsive Design", "SEO Optimized", "CMS Integration"],
+    badge: "Phổ biến",
+    link: "/dich-vu/website"
+  },
+  {
+    icon: Video,
+    title: "TikTok",
+    description: "Xây dựng kênh TikTok sáng tạo, bắt trend nhanh chóng, tiếp cận giới trẻ",
+    features: ["Content Strategy", "Trend Analysis", "Community Building"],
+    badge: "Trending",
+    link: "/quang-cao/tiktok-ads"
+  },
+  {
+    icon: Search,
+    title: "SEO",
+    description: "Tối ưu công cụ tìm kiếm, đưa website lên top Google, gia tăng traffic",
+    features: ["Keyword Research", "On-page SEO", "Link Building"],
+    badge: "Hiệu quả",
+    link: "/dich-vu/seo"
+  },
+  {
+    icon: Rocket,
+    title: "Startup/SAAS",
+    description: "Giải pháp marketing tinh gọn, tiết kiệm chi phí cho startup và SAAS",
+    features: ["MVP Development", "Growth Hacking", "Analytics"],
+    badge: "Startup",
+    link: "/khach-hang/startup"
+  },
+  {
+    icon: Building2,
+    title: "SME/D2C",
+    description: "Tư vấn chiến lược marketing số cho doanh nghiệp vừa và nhỏ",
+    features: ["E-commerce", "CRM Integration", "Multi-channel"],
+    badge: "SME",
+    link: "/khach-hang/smed2c"
+  },
+  {
+    icon: Factory,
+    title: "Doanh nghiệp truyền thống",
+    description: "Hỗ trợ chuyển đổi số toàn diện, nâng cao hiệu quả vận hành",
+    features: ["Digital Transformation", "Process Automation", "Training"],
+    badge: "Enterprise",
+    link: "/dich-vu/dn-truyen-thong"
+  },
+  {
+    icon: FileText,
+    title: "Landing Page",
+    description: "Thiết kế trang đích tối ưu chuyển đổi, gia tăng leads",
+    features: ["Conversion Optimization", "A/B Testing", "Analytics"],
+    badge: "Conversion",
+    link: "/dich-vu/landing-page"
+  },
+  {
+    icon: MessageCircle,
+    title: "Zalo OA",
+    description: "Xây dựng và quản lý Official Account Zalo hiệu quả",
+    features: ["Automation", "Customer Service", "Broadcasting"],
+    badge: "Local",
+    link: "/quang-cao/zalo-oa"
+  },
+  {
+    icon: MousePointer,
+    title: "Google Ads",
+    description: "Triển khai chiến dịch Google Ads tối ưu chi phí, đúng target",
+    features: ["Keyword Strategy", "Campaign Management", "ROI Optimization"],
+    badge: "Performance",
+    link: "/quang-cao/google-ads"
+  },
+  {
+    icon: Facebook,
+    title: "Facebook Ads",
+    description: "Tư vấn và chạy quảng cáo Facebook hiệu quả, tăng brand awareness",
+    features: ["Audience Targeting", "Creative Strategy", "Retargeting"],
+    badge: "Social",
+    link: "/quang-cao/facebook-ads"
+  },
+  {
+    icon: PenTool,
+    title: "Content & Media",
+    description: "Sản xuất nội dung sáng tạo, hình ảnh và video chuyên nghiệp",
+    features: ["Content Strategy", "Video Production", "Graphic Design"],
+    badge: "Creative",
+    link: "/dich-vu/content-media"
+  },
+  {
+    icon: Star,
+    title: "Booking Báo chí & KOL",
+    description: "Kết nối thương hiệu với KOL, báo chí uy tín",
+    features: ["KOL Network", "PR Strategy", "Media Relations"],
+    badge: "Influence",
+    link: "/booking/kol"
+  }
+];
+
 
   const serviceCategories = [
     {
@@ -176,9 +194,15 @@ export function Services() {
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                     {service.description}
                   </p>
-                  <Button variant="outline" size="sm" className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300">
-                    Tìm hiểu thêm
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300"
+                  >
+                    <Link to={service.link}>Tìm hiểu thêm</Link>
                   </Button>
+
                 </CardContent>
               </Card>
             </StaggerItem>
@@ -194,7 +218,7 @@ export function Services() {
             <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
               Liên hệ ngay với Necimatech Group để được tư vấn miễn phí và nhận báo giá tốt nhất
             </p>
-            <Button size="lg" variant="secondary" className="px-8 py-4">
+            <Button size="lg" variant="secondary" className="px-8 py-4" onClick={openModal}>
               Tư vấn miễn phí ngay
             </Button>
           </div>

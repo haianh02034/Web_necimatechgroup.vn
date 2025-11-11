@@ -145,13 +145,14 @@ export function Pricing() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.12 + 0.2 }}
-                  className="absolute top-0 right-8 transform -translate-y-1/2"
+                  className="absolute top-4 right-4 z-10"
                 >
-                  <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-current" />
+                  <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md flex items-center gap-1">
+                    <Star className="w-3 h-3 fill-current" />
                     Phổ biến nhất
                   </div>
                 </motion.div>
+
               )}
 
               {/* Optimized gradient background */}

@@ -14,17 +14,12 @@ export function MediaGallery() {
 
   const heading = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    show: { opacity: 1, y: 0 }
   };
 
   const card = {
     hidden: { opacity: 0, y: 40, scale: 0.98 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+    show: { opacity: 1, y: 0, scale: 1 }
   };
 
   const galleryItems = [
@@ -71,6 +66,7 @@ export function MediaGallery() {
       <div className="relative max-w-7xl mx-auto">
         <motion.div
           variants={heading}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.6 }}

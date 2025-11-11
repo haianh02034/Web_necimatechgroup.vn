@@ -1,8 +1,16 @@
 import { motion } from "motion/react";
 import { TrendingUp, Users, Megaphone, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+   const { openModal } = useCustomerContactModal();
+
+   const handlePricingClick = () => {
+     const pricingSection = document.getElementById('pricing');
+     if (pricingSection) {
+       pricingSection.scrollIntoView({ behavior: 'smooth' });
+     }
+   };
   const floatingIcons = [
     { Icon: TrendingUp, delay: 0, x: -20, y: -20 },
     { Icon: Users, delay: 0.2, x: 20, y: -30 },
@@ -91,10 +99,10 @@ export function Hero() {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100"onClick={openModal}>
                 Tư vấn miễn phí
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white text-white bg-white/10" onClick={handlePricingClick}>
                 Xem bảng giá
               </Button>
             </motion.div>

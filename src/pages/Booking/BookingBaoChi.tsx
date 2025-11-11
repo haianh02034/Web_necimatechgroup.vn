@@ -7,7 +7,6 @@ import { Pricing } from "../../components/6. Booking Báo chí/Pricing";
 import { Benefits } from "../../components/6. Booking Báo chí/Benefits";
 import { Process } from "../../components/6. Booking Báo chí/Process";
 import { Testimonials } from "../../components/6. Booking Báo chí/Testimonials";
-import { CTA } from "../../components/6. Booking Báo chí/CTA";
 import { MediaGallery  } from "../../components/6. Booking Báo chí/MediaGallery";
 import { Commitment } from "../../components/6. Booking Báo chí/Commitment";
 export default function BookingBaoChi() {
@@ -30,7 +29,7 @@ export default function BookingBaoChi() {
       <Commitment />
       <Testimonials />
       
-      <CTA />
+      
       <Footer />
       </div>
     </>

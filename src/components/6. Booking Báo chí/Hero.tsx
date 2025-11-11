@@ -2,30 +2,40 @@ import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import { 
-  Newspaper, 
-  FileText, 
-  Megaphone, 
-  Phone, 
+import {
+  Newspaper,
+  FileText,
+  Megaphone,
+  Phone,
   Globe,
   CheckCircle2,
   TrendingUp,
   BarChart3
 } from "lucide-react";
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 
 export function Hero() {
+  const { openModal } = useCustomerContactModal();
+
+  const handlePricingClick = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const slideInLeft = {
     initial: { opacity: 0, x: -60 },
     whileInView: { opacity: 1, x: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6 }
   };
 
   const slideInRight = {
     initial: { opacity: 0, x: 60 },
     whileInView: { opacity: 1, x: 0 },
     viewport: { once: true },
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6 }
   };
 
   return (
@@ -134,11 +144,11 @@ export function Hero() {
             </div>
             
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={openModal}>
                 <Phone className="w-5 h-5 mr-2" />
                 Tư vấn miễn phí
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={handlePricingClick}>
                 <FileText className="w-5 h-5 mr-2" />
                 Xem bảng giá
               </Button>

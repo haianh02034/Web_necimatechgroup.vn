@@ -1,8 +1,17 @@
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles, TrendingUp, Target } from "lucide-react";
 import { Button } from "../ui/button";
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 
 export function HeroSection() {
+  const { openModal } = useCustomerContactModal();
+
+  const handleServicesClick = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section id="home" className="relative w-full flex items-center justify-center overflow-hidden pt-32 pb-20 px-4"style={{ minHeight: 'calc(100vh - 4rem)' }}>
       <div className="container mx-auto max-w-6xl">
@@ -44,11 +53,11 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6 group">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6 group" onClick={openModal}>
                 Nhận Tư Vấn Miễn Phí
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-slate-50">
+              <Button variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-slate-50" onClick={handleServicesClick}>
                 Xem Dịch Vụ
               </Button>
             </motion.div>

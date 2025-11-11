@@ -7,7 +7,7 @@ import { Pricing } from "../../components/12. Dịch vụ Content & Media/Pricin
 import { Benefits } from "../../components/12. Dịch vụ Content & Media/Benefits";
 import { Testimonials } from "../../components/12. Dịch vụ Content & Media/Testimonials";
 import { WhyChoose } from "../../components/12. Dịch vụ Content & Media/WhyChoose";
-import { CTA } from "../../components/12. Dịch vụ Content & Media/CTA";
+
 import { Hero } from "../../components/12. Dịch vụ Content & Media/Hero";
 
 export default function ContentMedia() {
@@ -28,7 +28,7 @@ export default function ContentMedia() {
       <Benefits />
       <Testimonials />
       <WhyChoose />
-      <CTA />
+ 
         <Footer />
       </div>
     </>

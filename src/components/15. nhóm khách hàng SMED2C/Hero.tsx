@@ -1,11 +1,10 @@
 import { motion } from "motion/react";
 import { TrendingUp, Zap, Target } from "lucide-react";
 import { Button } from "../ui/button";
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 
 export function Hero() {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const { openModal } = useCustomerContactModal();
 
   return (
     <section className="relative w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white pt-20 pb-32"style={{ minHeight: 'calc(100vh - 4rem)' }}>
@@ -90,8 +89,8 @@ export function Hero() {
           >
             <Button
               size="lg"
-              onClick={scrollToContact}
-              className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-6 text-lg"
+              onClick={openModal}
+              className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-6 text-lg" 
             >
               Nhận Tư Vấn Miễn Phí
               <TrendingUp className="ml-2 w-5 h-5" />
@@ -104,7 +103,7 @@ export function Hero() {
                   .getElementById("packages")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="border-2 border-white text-white bg-white/10 px-8 py-6 text-lg"
             >
               Khám Phá Gói Dịch Vụ
               <Target className="ml-2 w-5 h-5" />

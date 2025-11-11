@@ -11,6 +11,13 @@ const stats = [
   { value: "3h", label: "Thời gian online mỗi ngày", icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500" /> },
 ];
 
+const scrollToPricing = () => {
+  const element = document.getElementById('pricing-packages');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export function Hero() {
   return (
     <section
@@ -51,9 +58,9 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-gray-300 hover:bg-gray-100 transition-colors flex items-center justify-center">
+              <Button onClick={scrollToPricing} variant="outline" size="lg" className="text-lg px-8 py-3 border-gray-300 hover:bg-gray-100 transition-colors flex items-center justify-center">
                 <Play className="mr-2 h-5 w-5" />
-                Xem demo
+                Xem gói dịch vụ
               </Button>
             </div>
 

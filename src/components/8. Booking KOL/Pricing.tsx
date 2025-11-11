@@ -55,7 +55,7 @@ const packages = [
 
 export function Pricing() {
   return (
-    <section className="py-20 px-4 relative overflow-hidden">
+    <section id="pricing" className="py-20 px-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-purple-50/30 to-white" />
       

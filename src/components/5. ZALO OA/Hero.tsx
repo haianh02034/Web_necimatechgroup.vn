@@ -2,8 +2,9 @@ import { Button } from "../ui/button";
 import { ArrowRight, Zap, Users, TrendingUp, Sparkles, Target, BarChart3, MessageSquare, CheckCircle2, Star, Shield } from "lucide-react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+  const { openModal } = useCustomerContactModal();
   return (
     <section 
       className="relative pt-16 pb-24 px-4 overflow-hidden bg-gradient-to-b from-blue-50/50 via-white to-white"
@@ -124,21 +125,30 @@ export function Hero() {
               className="flex flex-wrap gap-4 mb-10"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-xl hover:shadow-2xl transition-all group px-8 py-6 text-lg relative overflow-hidden">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-xl hover:shadow-2xl transition-all group px-8 py-6 text-lg relative overflow-hidden"onClick={openModal} >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0"
                     animate={{ x: ['-100%', '200%'] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                   />
                   <span className="relative flex items-center gap-2">
-                    Đăng ký ngay
+                    Tư vấn miễn phí
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-                <Button variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all">
-                  Tư vấn miễn phí
+                <Button
+                  variant="outline"
+                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all"
+                  onClick={() => {
+                    const pricingElement = document.getElementById('pricing');
+                    if (pricingElement) {
+                      pricingElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Xem gói dịch vụ
                 </Button>
               </motion.div>
             </motion.div>

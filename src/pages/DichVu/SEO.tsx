@@ -7,7 +7,7 @@ import { Challenges } from "../../components/17. Dịch vụ SEO/Challenges";
 import { Pricing } from "../../components/17. Dịch vụ SEO/Pricing";
 import { Process } from "../../components/17. Dịch vụ SEO/Process";
 import { Testimonials } from "../../components/17. Dịch vụ SEO/Testimonials";
-import { CTA } from "../../components/17. Dịch vụ SEO/CTA";
+
 import { Hero } from "../../components/17. Dịch vụ SEO/Hero";
 
 export default function SEO() {
@@ -28,7 +28,7 @@ export default function SEO() {
       <Pricing />
       <Process />
       <Testimonials />
-      <CTA />
+
         <Footer />
       </div>
     </>

@@ -1,8 +1,16 @@
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+  const { openModal } = useCustomerContactModal();
+
+  const handleServicesClick = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="relative w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 px-6 py-20 md:py-32"style={{ minHeight: 'calc(100vh - 4rem)' }}>
       {/* Animated background elements */}
@@ -80,12 +88,12 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg group"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg group"onClick={openModal}
             >
               Nhận tư vấn miễn phí
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-6 text-lg">
+            <Button size="lg" variant="outline" className="px-8 py-6 text-lg" onClick={handleServicesClick}>
               Tìm hiểu thêm
             </Button>
           </motion.div>

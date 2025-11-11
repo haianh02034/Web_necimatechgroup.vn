@@ -7,7 +7,7 @@ import { Challenges } from "../../components/16. Nhóm KH Start up/Challenges";
 import { ServicePackages } from "../../components/16. Nhóm KH Start up/ServicePackages";
 import { WhyChooseUs } from "../../components/16. Nhóm KH Start up/WhyChooseUs";
 import { Testimonials } from "../../components/16. Nhóm KH Start up/Testimonials";
-import { CTA } from "../../components/16. Nhóm KH Start up/CTA";
+
 
 export default function Startup() {
   return (
@@ -26,7 +26,7 @@ export default function Startup() {
       <ServicePackages />
       <WhyChooseUs />
       <Testimonials />
-      <CTA />
+
         <Footer />
       </div>
     </>

@@ -1,8 +1,16 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '../ui/button';
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+  const { openModal } = useCustomerContactModal();
+
+  const handlePricingClick = () => {
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="relative w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-20 pb-32" style={{ minHeight: 'calc(100vh - 4rem)' }}>
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
@@ -43,11 +51,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" className="gap-2 text-lg px-8 py-6">
+            <Button size="lg" className="gap-2 text-lg px-8 py-6"onClick={openModal}>
               Liên hệ tư vấn miễn phí
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6" onClick={handlePricingClick}>
               Xem các gói dịch vụ
             </Button>
           </motion.div>

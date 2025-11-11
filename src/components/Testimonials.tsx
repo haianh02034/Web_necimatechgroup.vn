@@ -6,10 +6,12 @@ import { Button } from "./ui/button";
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollAnimation, StaggerContainer, StaggerItem } from "./ScrollAnimation";
 import { AnimatedIcon } from "./AnimatedIcon";
+import { useCustomerContactModal } from "./CustomerContactModalProvider";
 
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const { openModal } = useCustomerContactModal();
 
   const testimonials = [
     {
@@ -394,7 +396,7 @@ export function Testimonials() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4">
+                      <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4" onClick={openModal}>
                         Tư vấn miễn phí
                       </Button>
                     </motion.div>
@@ -402,13 +404,13 @@ export function Testimonials() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button 
+                      {/* <Button 
                         variant="outline" 
                         size="lg" 
                         className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4"
                       >
                         Xem case study
-                      </Button>
+                      </Button> */}
                     </motion.div>
                   </motion.div>
                 </div>

@@ -2,8 +2,17 @@ import { motion } from "motion/react";
 import { Button } from "../ui/button";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { ArrowRight, Sparkles, Play, TrendingUp, Users } from "lucide-react";
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+    const { openModal } = useCustomerContactModal();
+
+    const scrollToPackages = () => {
+      const element = document.getElementById('packages');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
   return (
     <section className="relative w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 text-white" style={{ minHeight: 'calc(100vh - 4rem)' }}>
       {/* Animated background elements */}
@@ -73,11 +82,11 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
             >
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-white/90 group">
+              <Button size="lg" className="bg-white text-purple-600 hover:bg-white/90 group" onClick={openModal}>
                 Tư vấn miễn phí
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+              <Button size="lg" variant="outline" className="border-white text-white bg-white/20" onClick={scrollToPackages}>
                 Xem gói dịch vụ
               </Button>
             </motion.div>

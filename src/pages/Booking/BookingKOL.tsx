@@ -7,7 +7,7 @@ import { Pricing } from "../../components/8. Booking KOL/Pricing";
 import { Process } from "../../components/8. Booking KOL/Process";
 import { Commitments } from "../../components/8. Booking KOL/Commitments";
 import { Testimonials } from "../../components/8. Booking KOL/Testimonials";
-import { CTA } from "../../components/8. Booking KOL/CTA";
+
 import { Hero } from "../../components/8. Booking KOL/Hero";
 import { Introduction } from "../../components/8. Booking KOL/Introduction";
 import { Stats } from "../../components/8. Booking KOL/Stats";
@@ -42,7 +42,7 @@ export default function BookingKOL() {
       <Gallery />
       <Commitments />
       <Testimonials />
-      <CTA />
+
       <Footer />
       </div>
     </>

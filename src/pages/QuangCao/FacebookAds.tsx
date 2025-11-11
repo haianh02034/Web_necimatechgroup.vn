@@ -10,10 +10,8 @@ import {WhyChooseUs}  from "../../components/2. Facebook Ads/Differentiators";
 import {BenefitsSection} from "../../components/2. Facebook Ads/Benefits";
 import {CaseStudies} from "../../components/2. Facebook Ads/Testimonials";
 
-// import {CTA} from "../../components/2. Facebook Ads/CTA";
 import { AboutFacebookAds } from "../../components/2. Facebook Ads/Introduction";
 import { ChallengesSection } from "../../components/2. Facebook Ads/ChallengesSection";
-import {ContactSection} from "../../components/2. Facebook Ads/ContactSection";
 import "../../facebook-ads.css"; // Import the specific CSS for Google Ads page
 
 export default function FacebookAds() {
@@ -112,7 +110,7 @@ export default function FacebookAds() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <ContactSection />
+      
       </motion.div>
 
       <Footer />

@@ -6,7 +6,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 
-export function CustomerContactSection() {
+interface CustomerContactSectionProps {
+  onSubmitted?: () => void;
+}
+
+export function CustomerContactSection({ onSubmitted }: CustomerContactSectionProps) {
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -21,6 +25,7 @@ export function CustomerContactSection() {
     e.preventDefault();
     console.log('Form data:', formData);
     alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ trong vòng 24 giờ.');
+    onSubmitted?.();
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -40,13 +45,13 @@ export function CustomerContactSection() {
     <div className="w-full">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-8">
-          <h1 className="text-gray-900 mb-4 text-3xl md:text-4xl font-bold">
+        <div className="text-center mb-6 md:mb-8 px-4">
+          <h1 className="text-gray-900 mb-4 text-2xl sm:text-3xl md:text-4xl font-bold">
             Sẵn sàng bứt phá doanh thu
             <br />
             <span className="text-blue-600">cùng Necimatech Group?</span>
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl">
+          <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg lg:text-xl">
             Hãy để chúng tôi đồng hành cùng bạn xây dựng chiến lược Facebook Ads hiệu quả.
             <br />
             Liên hệ ngay để được tư vấn miễn phí!
@@ -54,10 +59,10 @@ export function CustomerContactSection() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {/* Left Column - Form */}
-          <div className="bg-white rounded-lg shadow-md p-6" onClick={handleClick}>
-            <h2 className="text-gray-900 mb-6 text-2xl font-semibold">Đăng ký tư vấn miễn phí</h2>
+          <div className="bg-white rounded-lg shadow-md p-4 md:p-6" onClick={handleClick}>
+            <h2 className="text-gray-900 mb-6 text-xl md:text-2xl font-semibold">Đăng ký tư vấn miễn phí</h2>
 
             <form onSubmit={handleSubmit} className="space-y-4" onClick={handleClick}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4" onClick={handleClick}>
@@ -191,59 +196,59 @@ export function CustomerContactSection() {
           </div>
 
           {/* Right Column - Contact Info & Why Choose Us */}
-          <div className="space-y-6" onClick={handleClick}>
+          <div className="space-y-4 md:space-y-6" onClick={handleClick}>
             {/* Contact Info Card */}
-            <div className="bg-white rounded-lg shadow-md p-6 space-y-6" onClick={handleClick}>
-              <h2 className="text-gray-900 text-xl font-semibold">Thông tin liên hệ</h2>
+            <div className="bg-white rounded-lg shadow-md p-4 md:p-6 space-y-4 md:space-y-6" onClick={handleClick}>
+              <h2 className="text-gray-900 text-lg md:text-xl font-semibold">Thông tin liên hệ</h2>
 
-              <div className="space-y-4" onClick={handleClick}>
-                <div className="flex gap-4" onClick={handleClick}>
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-blue-600" />
+              <div className="space-y-3 md:space-y-4" onClick={handleClick}>
+                <div className="flex gap-3 md:gap-4" onClick={handleClick}>
+                  <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <Phone className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
                   </div>
                   <div>
-                    <div className="text-gray-900 text-lg font-medium">Hotline</div>
-                    <div className="text-gray-600 text-base">1900 368 628</div>
+                    <div className="text-gray-900 text-base md:text-lg font-medium">Hotline</div>
+                    <div className="text-gray-600 text-sm md:text-base">1900 368 628</div>
                   </div>
                 </div>
 
-                <div className="flex gap-4" onClick={handleClick}>
-                  <div className="flex-shrink-0 w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-green-600" />
+                <div className="flex gap-3 md:gap-4" onClick={handleClick}>
+                  <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-green-50 rounded-lg flex items-center justify-center">
+                    <Mail className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
                   </div>
                   <div>
-                    <div className="text-gray-900 text-lg font-medium">Email</div>
-                    <div className="text-gray-600 text-base">info@necimatechgroup.vn</div>
+                    <div className="text-gray-900 text-base md:text-lg font-medium">Email</div>
+                    <div className="text-gray-600 text-sm md:text-base">info@necimatechgroup.vn</div>
                   </div>
                 </div>
 
-                <div className="flex gap-4" onClick={handleClick}>
-                  <div className="flex-shrink-0 w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-purple-600" />
+                <div className="flex gap-3 md:gap-4" onClick={handleClick}>
+                  <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-purple-50 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-4 h-4 md:w-5 md:h-5 text-purple-600" />
                   </div>
                   <div>
-                    <div className="text-gray-900 text-lg font-medium">Địa chỉ</div>
-                    <div className="text-gray-600 text-base">Số nhà 27, Ngõ 4, Cụm 4, Thôn 3</div>
-                    <div className="text-gray-600 text-base">Xã Thạch Hoà, Huyện Thạch Thất, Hà Nội</div>
+                    <div className="text-gray-900 text-base md:text-lg font-medium">Địa chỉ</div>
+                    <div className="text-gray-600 text-sm md:text-base">Số nhà 27, Ngõ 4, Cụm 4, Thôn 3</div>
+                    <div className="text-gray-600 text-sm md:text-base">Xã Thạch Hoà, Huyện Thạch Thất, Hà Nội</div>
                   </div>
                 </div>
 
-                <div className="flex gap-4" onClick={handleClick}>
-                  <div className="flex-shrink-0 w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-orange-600" />
+                <div className="flex gap-3 md:gap-4" onClick={handleClick}>
+                  <div className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-orange-50 rounded-lg flex items-center justify-center">
+                    <Clock className="w-4 h-4 md:w-5 md:h-5 text-orange-600" />
                   </div>
                   <div>
-                    <div className="text-gray-900 text-lg font-medium">Giờ làm việc</div>
-                    <div className="text-gray-600 text-base">Thứ 2 - Thứ 6: 8:00 - 17:30</div>
-                    <div className="text-gray-600 text-base">Thứ 7: 8:00 - 12:00</div>
+                    <div className="text-gray-900 text-base md:text-lg font-medium">Giờ làm việc</div>
+                    <div className="text-gray-600 text-sm md:text-base">Thứ 2 - Thứ 6: 8:00 - 17:30</div>
+                    <div className="text-gray-600 text-sm md:text-base">Thứ 7: 8:00 - 12:00</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Why Choose Us Card */}
-            <div className="bg-blue-600 rounded-lg p-6 text-white" onClick={handleClick}>
-              <h2 className="mb-6 text-xl font-semibold">Tại sao chọn Necimatech Group?</h2>
+            <div className="bg-blue-600 rounded-lg p-4 md:p-6 text-white" onClick={handleClick}>
+              <h2 className="mb-4 md:mb-6 text-lg md:text-xl font-semibold">Tại sao chọn Necimatech Group?</h2>
 
               <ul className="space-y-3" onClick={handleClick}>
                 {benefits.map((benefit, index) => (

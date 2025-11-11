@@ -8,7 +8,7 @@ import { BenefitsGrid } from "../../components/3. Google Ads/BenefitsGrid";
 import { AdvantagesSection } from "../../components/3. Google Ads/AdvantagesSection";
 import { StrategySection } from "../../components/3. Google Ads/StrategySection";
 import { AdFormatsSection } from "../../components/3. Google Ads/AdFormatsSection";
-import { CTASection } from "../../components/3. Google Ads/CTASection";
+
 import { PricingCards } from "../../components/3. Google Ads/PricingCards";
 import { PartnerBadges } from "../../components/3. Google Ads/PartnerBadges";
 
@@ -31,7 +31,7 @@ export default function GoogleAds() {
       <AdvantagesSection />
       <StrategySection />
       <AdFormatsSection />
-      <CTASection />
+
       <Footer />
       </div>
     </>

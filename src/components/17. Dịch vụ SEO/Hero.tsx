@@ -1,8 +1,16 @@
 import { motion } from "motion/react";
 import { TrendingUp, Sparkles, Target } from "lucide-react";
 import { Button } from "../ui/button";
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+    const { openModal } = useCustomerContactModal();
+
+    const handlePricingClick = () => {
+      const pricingSection = document.getElementById('pricing');
+      if (pricingSection) {
+        pricingSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"style={{ minHeight: 'calc(100vh - 4rem)' }}>
       {/* Animated background elements */}
@@ -108,10 +116,10 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap gap-4 justify-center"
           >
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={openModal}>
               Nhận tư vấn miễn phí
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" onClick={handlePricingClick}>
               Xem gói dịch vụ
             </Button>
           </motion.div>

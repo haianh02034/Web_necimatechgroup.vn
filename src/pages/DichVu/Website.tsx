@@ -6,7 +6,7 @@ import { ValueProposition } from "../../components/18. Dịch vụ Website/Value
 import { ServicePackages } from "../../components/18. Dịch vụ Website/ServicePackages";
 import { ProcessSteps } from "../../components/18. Dịch vụ Website/ProcessSteps";
 import { Benefits } from "../../components/18. Dịch vụ Website/Benefits";
-import { CTASection } from "../../components/18. Dịch vụ Website/CTASection";
+
 
 export default function Website() {
   return (
@@ -24,7 +24,7 @@ export default function Website() {
         <ServicePackages />
         <ProcessSteps />
         <Benefits />
-        <CTASection />
+
         <Footer />
       </div>
     </>

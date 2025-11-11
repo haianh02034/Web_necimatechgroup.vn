@@ -2,7 +2,8 @@ import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Sun, Moon, ChevronDown, Facebook, Search, Laptop, ShoppingCart, Rocket, Newspaper, User, Film, FileText, Factory } from 'lucide-react';
 import { Button } from './ui/button';
-import { CustomerContactSection } from './CustomerContactSection';
+import { useCustomerContactModal } from './CustomerContactModalProvider';
+import { title } from 'process';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,8 +20,8 @@ export function Header() {
   const [mobileDropdown, setMobileDropdown] = useState<number | null>(null);
   const [isThemeToggling, setIsThemeToggling] = useState(false);
   const [rippleEffect, setRippleEffect] = useState<{ x: number; y: number; show: boolean } | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const menuRefs = useRef<HTMLButtonElement[]>([]);
+  const { openModal } = useCustomerContactModal();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -88,6 +89,13 @@ export function Header() {
         { name: 'SMED2C', icon: ShoppingCart, path: '/khach-hang/smed2c' },
         { name: 'Start up', icon: Rocket, path: '/khach-hang/startup' }
       ]
+    },
+    {
+      title: 'Tin tức',
+      items: [
+        { name: 'SMED2C', icon: ShoppingCart, path: '/khach-hang/smed2c' },
+        { name: 'Start up', icon: Rocket, path: '/khach-hang/startup' }
+      ]
     }
   ];
 
@@ -107,7 +115,6 @@ export function Header() {
               '--background': '#fff',
               '--foreground': 'oklch(.145 0 0)',
               '--card': '#fff',
-              '--card-foreground': 'oklch(.145 0 0)',
               '--popover': 'oklch(1 0 0)',
               '--popover-foreground': 'oklch(.145 0 0)',
               '--primary': 'oklch(0.3 0.25 320)',
@@ -470,7 +477,7 @@ export function Header() {
 
               {/* Enhanced CTA Button with Sliding Light Effect */}
           <Button
-            onClick={() => setIsModalOpen(true)}
+            onClick={openModal}
             className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-[length:200%_100%] bg-[position:10%_0] hover:shadow-xl hover:scale-105 transition-all duration-300 text-white relative overflow-hidden slide-light-effect py-2 px-6 font-semibold"
           >
             Tư vấn miễn phí
@@ -536,7 +543,7 @@ export function Header() {
 
                 <div className={`pt-3 mt-2 border-t ${isDarkMode ? 'border-border' : 'border-border'}`}>
                   <Button
-                    onClick={() => { setIsModalOpen(true); setIsMenuOpen(false); }}
+                    onClick={() => { openModal(); setIsMenuOpen(false); }}
                     className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-base font-semibold rounded-xl relative overflow-hidden slide-light-effect"
                   >
                     🚀 Tư vấn miễn phí
@@ -547,52 +554,6 @@ export function Header() {
           )}
         </div>
       </header>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <>
-          {/* Backdrop - Click to close */}
-          <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
-            style={{ zIndex: 100 }}
-            onClick={() => setIsModalOpen(false)}
-          />
-
-          {/* Modal Box - Prevent backdrop clicks */}
-          <div
-            className="fixed inset-0 flex items-center justify-center"
-            style={{ zIndex: 101 }}
-            onClick={(e) => {
-              // Only close if clicked directly on this container (not bubbled from modal)
-              if (e.target === e.currentTarget) {
-                setIsModalOpen(false);
-              }
-            }}
-          >
-            <div
-              className="bg-white rounded-3xl shadow-2xl max-w-5xl w-full mx-4 max-h-[90vh] animate-modalFadeIn relative overflow-hidden transition-all duration-300 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] hover:scale-[1.02]"
-            >
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-0 bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 rounded-full p-3 transition-all duration-300 hover:scale-125 shadow-xl border-2 border-white/20 backdrop-blur-sm animate-pulse"
-                style={{ zIndex: 10 }}
-              >
-                <X className="w-6 h-6 text-white drop-shadow-sm" />
-              </button>
-
-              {/* Modal Content */}
-              <div
-                className="overflow-y-auto max-h-[85vh] p-8 animate-modalContentReveal"
-                style={{
-                  animation: 'modalContentReveal 0.5s ease-out 0.2s both'
-                }}
-              >
-                <CustomerContactSection />
-              </div>
-            </div>
-          </div>
-        </>
-      )}
     </>
   );
 }

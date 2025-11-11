@@ -7,7 +7,7 @@ import { Solutions } from "../../components/15. nhóm khách hàng SMED2C/Soluti
 import { ServicePackages } from "../../components/15. nhóm khách hàng SMED2C/ServicePackages";
 import { Benefits } from "../../components/15. nhóm khách hàng SMED2C/Benefits";
 import { Testimonials } from "../../components/15. nhóm khách hàng SMED2C/Testimonials";
-import { CTA } from "../../components/15. nhóm khách hàng SMED2C/CTA";
+
 import { Toaster } from "../../components/ui/sonner";
 
 export default function SMED2C() {
@@ -27,7 +27,7 @@ export default function SMED2C() {
       <ServicePackages />
       <Benefits />
       <Testimonials />
-      <CTA />
+
       <Toaster />
         <Footer />
       </div>

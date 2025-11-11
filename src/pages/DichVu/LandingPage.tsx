@@ -7,7 +7,7 @@ import { PricingPackages } from "../../components/13. Dịch vụ marketing Land
 import { KeyFeatures } from "../../components/13. Dịch vụ marketing Landing Page/KeyFeatures";
 import { Benefits } from "../../components/13. Dịch vụ marketing Landing Page/Benefits";
 import { Testimonials } from "../../components/13. Dịch vụ marketing Landing Page/Testimonials";
-import { CTASection } from "../../components/13. Dịch vụ marketing Landing Page/CTASection";
+
 import { Hero } from "../../components/13. Dịch vụ marketing Landing Page/Hero";
 import { Toaster } from "../../components/ui/sonner";
 
@@ -29,7 +29,7 @@ export default function LandingPage() {
       <KeyFeatures />
       <Benefits />
       <Testimonials />
-      <CTASection />
+
       <Toaster />
         <Footer />
       </div>

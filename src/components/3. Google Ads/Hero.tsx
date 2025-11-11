@@ -2,8 +2,9 @@ import { motion } from "motion/react";
 import { Button } from "../ui/button";
 import { ArrowRight, TrendingUp, Target, BarChart3 } from "lucide-react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-
+import { useCustomerContactModal } from "../CustomerContactModalProvider";
 export function Hero() {
+   const { openModal } = useCustomerContactModal();
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white  "style={{ minHeight: 'calc(100vh - 4rem)' }}>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
@@ -42,7 +43,7 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
+                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50" onClick={openModal}>
                   Tư vấn miễn phí
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -52,7 +53,7 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white/10">
+                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white/10" onClick={() => { document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' }); }}>
                   Xem gói dịch vụ
                 </Button>
               </motion.div>
