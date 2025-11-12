@@ -194,13 +194,13 @@ export function Footer() {
             © 2024 Necimatech Group. All rights reserved.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">
+            <a href="https://www.privacypolicies.com/live/62e31212-8b9c-4577-8be0-9834b219438c" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">
               Chính sách bảo mật
             </a>
-            <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">
+            <a href="https://www.termsfeed.com/live/b541fae2-bcfd-445d-baa0-cb6f8455de3d" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">
               Điều khoản sử dụng
             </a>
-            <a href="#" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">
+            <a href="#" id="open_preferences_center" className="text-gray-300 hover:text-blue-400 text-sm transition-colors">
               Cookies
             </a>
           </div>
