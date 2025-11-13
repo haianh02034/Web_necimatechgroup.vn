@@ -18,6 +18,7 @@ export default function ContentMedia() {
         description="Dịch vụ sản xuất content và media chuyên nghiệp. Tạo nội dung sáng tạo, hấp dẫn cho website, mạng xã hội và các kênh truyền thông số."
         url="https://necimatech.com/dich-vu/content-media"
         image="https://necimatech.com/og-content-media.jpg"
+        keywords="content marketing, sản xuất nội dung, truyền thông số, content media, sáng tạo nội dung, mạng xã hội, website content"
       />
       <div className="min-h-screen">
         <Header />

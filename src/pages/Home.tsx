@@ -15,6 +15,7 @@ export default function Home() {
         description="Necimatech Group cung cấp giải pháp công nghệ tiên tiến, phát triển phần mềm và dịch vụ chuyển đổi số. Trao quyền cho doanh nghiệp với các giải pháp công nghệ sáng tạo."
         url="https://necimatech.com/"
         image="https://necimatech.com/og-image.jpg"
+        keywords="Necimatech Group, giải pháp công nghệ, phát triển phần mềm, chuyển đổi số, công nghệ tiên tiến, dịch vụ IT, doanh nghiệp số"
       />
       <div className="min-h-screen">
         <Header />

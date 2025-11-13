@@ -16,6 +16,7 @@ export default function Website() {
         description="Dịch vụ thiết kế và phát triển website chuyên nghiệp. Từ website doanh nghiệp, thương mại điện tử đến các ứng dụng web phức tạp với công nghệ hiện đại."
         url="https://necimatech.com/dich-vu/website"
         image="https://necimatech.com/og-website.jpg"
+        keywords="thiết kế website, phát triển website, website doanh nghiệp, thương mại điện tử, ứng dụng web, React, Node.js, PHP"
       />
       <div className="min-h-screen">
         <Header />

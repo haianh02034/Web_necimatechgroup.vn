@@ -30,6 +30,7 @@ export default function FacebookAds() {
         description="Dịch vụ chạy quảng cáo Facebook Ads chuyên nghiệp. Tối ưu hóa chiến dịch, tăng tỷ lệ chuyển đổi và tiếp cận khách hàng mục tiêu hiệu quả với đội ngũ chuyên gia giàu kinh nghiệm."
         url="https://necimatech.com/quang-cao/facebook-ads"
         image="https://necimatech.com/og-facebook-ads.jpg"
+        keywords="Facebook Ads, quảng cáo Facebook, chạy quảng cáo Facebook, tối ưu hóa chiến dịch, tăng chuyển đổi, tiếp cận khách hàng, quảng cáo số"
       />
       <Header />
 

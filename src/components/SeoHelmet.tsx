@@ -6,6 +6,7 @@ interface SeoHelmetProps {
   url: string;
   image?: string;
   type?: string;
+  keywords?: string;
 }
 
 export default function SeoHelmet({
@@ -13,12 +14,14 @@ export default function SeoHelmet({
   description,
   url,
   image = "https://yourdomain.com/og-image.jpg",
-  type = "website"
+  type = "website",
+  keywords
 }: SeoHelmetProps) {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
 
       {/* Open Graph */}

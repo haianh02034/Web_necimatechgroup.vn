@@ -22,6 +22,7 @@ export default function TikTokAds() {
         description="Dịch vụ chạy quảng cáo TikTok Ads chuyên nghiệp. Tiếp cận thế hệ Gen Z và Millennial với nội dung sáng tạo, thu hút và có tính lan truyền cao."
         url="https://necimatech.com/quang-cao/tiktok-ads"
         image="https://necimatech.com/og-tiktok-ads.jpg"
+        keywords="TikTok Ads, quảng cáo TikTok, chạy quảng cáo TikTok, Gen Z, Millennial, nội dung sáng tạo, viral content, quảng cáo video"
       />
       <div className="min-h-screen">
         <Header />

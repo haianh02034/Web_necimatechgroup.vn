@@ -16,6 +16,7 @@ export default function DNTruyenThong() {
         description="Dịch vụ đào tạo và truyền thông doanh nghiệp chuyên nghiệp. Đào tạo kỹ năng số, xây dựng văn hóa doanh nghiệp và phát triển đội ngũ nhân sự chất lượng cao."
         url="https://necimatech.com/dich-vu/dn-truyen-thong"
         image="https://necimatech.com/og-dn-truyenthong.jpg"
+        keywords="đào tạo doanh nghiệp, truyền thông doanh nghiệp, kỹ năng số, văn hóa doanh nghiệp, phát triển nhân sự, training"
       />
       <div className="min-h-screen">
         <Header />

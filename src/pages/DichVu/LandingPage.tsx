@@ -19,6 +19,7 @@ export default function LandingPage() {
         description="Dịch vụ thiết kế Landing Page chuyên nghiệp với tỷ lệ chuyển đổi cao. Tối ưu hóa UX/UI, tốc độ tải trang và các yếu tố thúc đẩy hành vi mua hàng."
         url="https://necimatech.com/dich-vu/landing-page"
         image="https://necimatech.com/og-landing-page.jpg"
+        keywords="Landing Page, thiết kế Landing Page, tỷ lệ chuyển đổi, UX/UI, tối ưu hóa chuyển đổi, marketing page"
       />
       <div className="min-h-screen">
         <Header />

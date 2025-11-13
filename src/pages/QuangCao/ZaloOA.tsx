@@ -18,6 +18,7 @@ export default function ZaloOA() {
         description="Dịch vụ quản lý Zalo Official Account chuyên nghiệp. Xây dựng kênh chăm sóc khách hàng, tăng tương tác và hỗ trợ bán hàng hiệu quả trên nền tảng Zalo."
         url="https://necimatech.com/quang-cao/zalo-oa"
         image="https://necimatech.com/og-zalo-oa.jpg"
+        keywords="Zalo OA, Official Account Zalo, quản lý Zalo, chăm sóc khách hàng, tương tác Zalo, bán hàng Zalo, marketing Zalo"
       />
       <div className="min-h-screen">
         <Header />

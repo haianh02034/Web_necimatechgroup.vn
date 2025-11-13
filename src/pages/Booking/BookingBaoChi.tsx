@@ -17,6 +17,7 @@ export default function BookingBaoChi() {
         description="Dịch vụ booking báo chí chuyên nghiệp. Đăng bài PR, tin tức doanh nghiệp trên các tờ báo uy tín, tăng độ tin cậy và nhận diện thương hiệu."
         url="https://necimatech.com/booking/bao-chi"
         image="https://necimatech.com/og-booking-baochi.jpg"
+        keywords="booking báo chí, PR báo chí, đăng bài báo, tin tức doanh nghiệp, nhận diện thương hiệu, truyền thông"
       />
       <div className="min-h-screen">
         <Header />

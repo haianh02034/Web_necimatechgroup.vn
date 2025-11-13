@@ -16,6 +16,12 @@ import DNTruyenThong from "../pages/DichVu/DNTruyenThong";
 
 import SMED2C from "../pages/KhachHang/SMED2C";
 import Startup from "../pages/KhachHang/Startup";
+
+// Tin tức
+import BlogList from "../pages/Tin tức/BlogList";
+import BlogCategory from "../pages/Tin tức/BlogCategory";
+import BlogPostDetail from "../pages/Tin tức/BlogPostDetail";
+
 import { useDynamicCSS } from "../hooks/useDynamicCSS";
 import ScrollToTop from "../components/ScrollToTop";
 import { CustomerContactModalProvider } from "../components/CustomerContactModalProvider";
@@ -50,6 +56,16 @@ function RouterContent() {
         {/* Khách hàng */}
         <Route path="/khach-hang/smed2c" element={<SMED2C />} />
         <Route path="/khach-hang/startup" element={<Startup />} />
+
+        {/* ========== Tin tức ========== */}
+        {/* Trang danh sách tất cả bài viết */}
+        <Route path="/tin-tuc" element={<BlogList />} />
+
+        {/* Trang danh sách bài viết theo chuyên mục */}
+        <Route path="/tin-tuc/:category" element={<BlogCategory />} />
+
+        {/* Trang chi tiết bài viết */}
+        <Route path="/tin-tuc/:category/:slug" element={<BlogPostDetail />} />
       </Routes>
     </>
   );

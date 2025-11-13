@@ -20,6 +20,7 @@ export default function GoogleAds() {
         description="Dịch vụ chạy quảng cáo Google Ads (AdWords) chuyên nghiệp. Tối ưu hóa chiến dịch tìm kiếm, display và shopping ads để đạt hiệu quả cao nhất với ngân sách hợp lý."
         url="https://necimatech.com/quang-cao/google-ads"
         image="https://necimatech.com/og-google-ads.jpg"
+        keywords="Google Ads, AdWords, quảng cáo Google, tìm kiếm ads, display ads, shopping ads, tối ưu hóa chiến dịch, SEM"
       />
       <div className="min-h-screen flex flex-col"> {/* Added flex flex-col */}
         <Header />

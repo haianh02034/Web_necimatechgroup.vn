@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Sun, Moon, ChevronDown, Facebook, Search, Laptop, ShoppingCart, Rocket, Newspaper, User, Film, FileText, Factory } from 'lucide-react';
 import { Button } from './ui/button';
 import { useCustomerContactModal } from './CustomerContactModalProvider';
+import { useCategories } from '../hooks/useCategories';
 import { title } from 'process';
 
 export function Header() {
+  const { categories } = useCategories();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // Initialize theme from localStorage or system preference
@@ -56,6 +58,12 @@ export function Header() {
     setTimeout(() => setRippleEffect(null), 600);
   };
 
+  const newsItems = categories.map(category => ({
+    name: category.name,
+    icon: Newspaper,
+    path: `/tin-tuc/${category.slug}`,
+  }));
+
   const menuItems = [
     {
       title: 'Quảng cáo',
@@ -92,10 +100,7 @@ export function Header() {
     },
     {
       title: 'Tin tức',
-      items: [
-        { name: 'SMED2C', icon: ShoppingCart, path: '/khach-hang/smed2c' },
-        { name: 'Start up', icon: Rocket, path: '/khach-hang/startup' }
-      ]
+      items: newsItems
     }
   ];
 

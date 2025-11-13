@@ -25,6 +25,7 @@ export default function BookingKOL() {
         description="Dịch vụ booking KOL và Influencer chuyên nghiệp. Kết nối thương hiệu với những người ảnh hưởng hàng đầu trong lĩnh vực, tạo nên chiến dịch marketing hiệu quả."
         url="https://necimatech.com/booking/kol"
         image="https://necimatech.com/og-booking-kol.jpg"
+        keywords="booking KOL, Influencer marketing, KOL marketing, người ảnh hưởng, chiến dịch marketing, quảng bá thương hiệu"
       />
       <div className="min-h-screen">
         

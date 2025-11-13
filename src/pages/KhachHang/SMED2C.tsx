@@ -18,6 +18,7 @@ export default function SMED2C() {
         description="Giải pháp toàn diện dành cho doanh nghiệp SMED2C (Small and Medium Enterprises Direct to Consumer). Chuyển đổi số, marketing và bán hàng trực tuyến hiệu quả."
         url="https://necimatech.com/khach-hang/smed2c"
         image="https://necimatech.com/og-smed2c.jpg"
+        keywords="SMED2C, doanh nghiệp vừa và nhỏ, chuyển đổi số, marketing online, bán hàng trực tuyến, e-commerce, SME"
       />
       <div className="min-h-screen">
         <Header />

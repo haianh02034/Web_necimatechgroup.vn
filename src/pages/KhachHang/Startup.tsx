@@ -17,6 +17,7 @@ export default function Startup() {
         description="Giải pháp toàn diện dành cho doanh nghiệp Startup. Từ ý tưởng đến sản phẩm hoàn thiện, chúng tôi đồng hành cùng bạn trong hành trình khởi nghiệp thành công."
         url="https://necimatech.com/khach-hang/startup"
         image="https://necimatech.com/og-startup.jpg"
+        keywords="startup, khởi nghiệp, doanh nghiệp khởi nghiệp, ý tưởng sản phẩm, phát triển sản phẩm, MVP, scale up"
       />
       <div className="min-h-screen">
         <Header />

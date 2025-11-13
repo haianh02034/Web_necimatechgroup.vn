@@ -18,6 +18,7 @@ export default function SEO() {
         description="Dịch vụ SEO chuyên nghiệp giúp website đạt thứ hạng cao trên Google. Tối ưu hóa On-page, Off-page, Technical SEO và Content Marketing."
         url="https://necimatech.com/dich-vu/seo"
         image="https://necimatech.com/og-seo.jpg"
+        keywords="SEO, tối ưu hóa công cụ tìm kiếm, Google ranking, On-page SEO, Off-page SEO, Technical SEO, Content Marketing"
       />
       <div className="min-h-screen">
         <Header />
